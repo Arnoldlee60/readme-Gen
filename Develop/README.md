@@ -1,11 +1,9 @@
 README.md
   
-
-Professional README.md  
+a  
 ================
-Licencing:
+Licences
 ================
- //renderLicenseLink(data)} //licence part not finished
 
 
 Table of Contents
@@ -22,34 +20,33 @@ Contribution
 
 Test
 
-
 Description
 ================
-Create a read me file
+b
 
 
 Installation
 ================
-Inquirer
+c
 
 
 Usage
 ================
-It will create read me files
+d
 
 
 Licence
 ================
-Mozilla
+None
 
 
 Contribution
 ================
-N/A
+e
 
 
 Test
 ================
-run node index.js then fill out the questions
+f
 
 

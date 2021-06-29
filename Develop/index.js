@@ -1,9 +1,9 @@
-// Global require's
+// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js')
 
-// Array of questions to ask the user
+// TODO: Create an array of questions for user input
 const questions = [
     {
         type: "input",
@@ -36,7 +36,8 @@ const questions = [
             "ISC",
             "MIT",
             "Mozilla",
-            "Open"
+            "Open",
+            "None"
         ]
     },
     {
@@ -48,6 +49,16 @@ const questions = [
         type: "input",
         name: "test",
         message: "Test instructions?",
+    },
+    {
+        type: "input",
+        name: "github",
+        message: "What is your github name?",
+    },
+    {
+        type: "input",
+        name: "Email",
+        message: "What is your email?",
     }
 ];
 

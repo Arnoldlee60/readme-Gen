@@ -2,8 +2,8 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license !== "None") {
-    return `[![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)](https://sheilds.io)`
-}                            //https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>
+    return `![license](https://img.shields.io/badge/license-${license}-blue)`
+}                            
 return '';
 }
 
@@ -11,26 +11,28 @@ return '';
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license !== "None") {
-    return `[![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)](https://sheilds.io)`
-}                            //https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>
+    return `[![license](https://img.shields.io/badge/license-${license}-blue)](https://shields.io)`
+}                           
 return '';
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   //console.log(data)
+  var x = renderLicenseLink(data.license);
   return `README.md
   
 ${data.name}  
 ================
-Licencing
+Licences
 ================
- //renderLicenseLink(data)} //licence part not finished\n
-
+${x}\n
 Table of Contents
 ================
 Description\n
@@ -39,7 +41,6 @@ Usage\n
 Licence\n
 Contribution\n
 Test\n
-
 Description
 ================
 ${data.desc}\n
@@ -64,6 +65,10 @@ Test
 ================
 ${data.test}\n
 
+Additional links
+================
+${data.github}
+${data.email}
 `
 }
 
