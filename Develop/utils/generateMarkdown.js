@@ -11,7 +11,7 @@ return '';
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license !== "None") {
-    return `[![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)](${generateProjectUrl(github, title)})`
+    return `[![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)](https://sheilds.io)`
 }                            //https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>
 return '';
 }
@@ -22,33 +22,47 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `#${data.title}
-Licencing:
-  ${renderLicenseLink(license)} //licence part
+  //console.log(data)
+  return `README.md
+  
+${data.name}  
+================
+Licencing
+================
+ //renderLicenseLink(data)} //licence part not finished\n
 
 Table of Contents
 ================
+Description\n
+Installation\n
+Usage\n
+Licence\n
+Contribution\n
+Test\n
+
 Description
+================
+${data.desc}\n
+
 Installation
+================
+${data.install}\n
+
 Usage
+================
+${data.usage}\n
+
 Licence
+================
+${data.license}\n
+
 Contribution
+================
+${data.contribution}\n
+
 Test
 ================
-
-Description
-${data.description}
-
-Installation
-${data.Installation}
-Usage
-${data.Usage}
-Licence
-${data.Licence}
-Contribution
-${data.Contribution}
-Test
-${data.Test}
+${data.test}\n
 
 `
 }

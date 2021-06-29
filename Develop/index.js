@@ -1,88 +1,73 @@
-// TODO: Include packages needed for this application
+// Global require's
 const inquirer = require('inquirer');
 const fs = require('fs');
-const util = require('util');
-const readMeCreate = require("./utils/generateMarkdown.js");
-const writeFileAsync = util.promisify(fs.writeFile);
+const generateMarkdown = require('./utils/generateMarkdown.js')
 
-// TODO: Create an array of questions for user input
-const questions = 
-[   "What is the name of the project?", 
-    "What is a general description of the project",
-    "What do you need to install",
-    "What usage does your project have?",
-    "What licence do you need?",
-    "Contribution guidelines?",
-    "Test instructions?"
+// Array of questions to ask the user
+const questions = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is the name of the project?", 
+    },
+    {
+        type: "input",
+        name: "desc",
+        message: "What is a general description of the project",
+    },
+    {
+        type: "input",
+        name: "install",
+        message: "What do you need to install",
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "What usage does your project have?",
+    },
+    {
+        type: "list",
+        name: "license",
+        message: "What licence do you need?",
+        choices: [
+            "Apache",
+            "Academic",
+            "GNU",
+            "ISC",
+            "MIT",
+            "Mozilla",
+            "Open"
+        ]
+    },
+    {
+        type: "input",
+        name: "contribution",
+        message: "Contribution guidelines?",
+    },
+    {
+        type: "input",
+        name: "test",
+        message: "Test instructions?",
+    }
 ];
 
-function promptUser(){
-    return inquirer.prompt([
-        {
-            type: "input",
-            name: "name",
-            message: questions[0],
-        },
-        {
-            type: "input",
-            name: "desc",
-            message: questions[1],
-        },
-        {
-            type: "input",
-            name: "install",
-            message: questions[2],
-        },
-        {
-            type: "input",
-            name: "usage",
-            message: questions[3],
-        },
-        {
-            type: "list",
-            name: "license",
-            message: questions[4],
-            choices: [
-                "Apache",
-                "Academic",
-                "GNU",
-                "ISC",
-                "MIT",
-                "Mozilla",
-                "Open"
-            ]
-        },
-        {
-            type: "input",
-            name: "contribution",
-            message: questions[5],
-        },
-        {
-            type: "input",
-            name: "test",
-            message: questions[6],
-        }
-    ]);
-} 
-
-// TODO: Create a function to write README file
+// Function to write README file
 function writeToFile(fileName, data) {
-        fs.writeFile(fileName, data), err =>{
-            if(err){
-                return console.log("Error found");
-            }
-            return console.log("Success! No error");
-        }
+    fs.writeFile(fileName, data, (err) => {
+        if (err)
+            throw err;
+        console.log('Success! Information transferred to the README!')
+    });
+};
 
-}
-
-// TODO: Create a function to initialize app
+// Function to initialize app
 function init() {
-    promptUser()
-    .then((answers) => console.log(answers)); //answers.name
-    
-    
-}
+    inquirer.prompt(questions)
+    .then(function (userInput) {
+        console.log(userInput)
+        writeToFile("README.md", generateMarkdown(userInput));
+    });
+};
 
 // Function call to initialize app
 init();
