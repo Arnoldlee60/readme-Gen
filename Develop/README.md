@@ -4,7 +4,7 @@ a
 ================
 Licences
 ================
-
+[![license](https://img.shields.io/badge/license-GNU-blue)](https://shields.io)
 
 Table of Contents
 ================
@@ -37,7 +37,7 @@ d
 
 Licence
 ================
-None
+GNU
 
 
 Contribution
@@ -50,3 +50,7 @@ Test
 f
 
 
+Additional links
+================
+https://github.com/arnoldlee60
+arnoldlee60@gmail.com

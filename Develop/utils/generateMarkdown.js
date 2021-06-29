@@ -67,7 +67,7 @@ ${data.test}\n
 
 Additional links
 ================
-${data.github}
+${'https://github.com/' + data.github}\n
 ${data.email}
 `
 }
