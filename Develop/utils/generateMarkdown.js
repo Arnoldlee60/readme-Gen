@@ -35,33 +35,33 @@ Licences
 ${x}\n
 Table of Contents
 ================
-Description\n
-Installation\n
-Usage\n
-Licence\n
-Contribution\n
-Test\n
-Description
+[Description](desc)\n
+[Installation](installation)\n
+[Usage](usage)\n
+[Licence](#licence)\n
+[Contribution](#contribution)\n
+[Test](#test)\n
+#Description
 ================
 ${data.desc}\n
 
-Installation
+#Installation
 ================
 ${data.install}\n
 
-Usage
+#Usage
 ================
 ${data.usage}\n
 
-Licence
+#Licence
 ================
 ${data.license}\n
 
-Contribution
+#Contribution
 ================
 ${data.contribution}\n
 
-Test
+#Test
 ================
 ${data.test}\n
 
